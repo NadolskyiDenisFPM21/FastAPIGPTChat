@@ -20,7 +20,7 @@ class Message(Base):
     id = Column(Integer, primary_key=True)
     message = Column(String, nullable=False)
     user_id = Column(UUID, ForeignKey('user.id'))
-    thread_id = Column(String, ForeignKey('thread.id'))
+    thread_id = Column(String, ForeignKey('thread.id', ondelete='set null'), nullable=True)
     created_at = Column(TIMESTAMP, default=datetime.utcnow)
     author_role = Column(String, nullable=False)
 
