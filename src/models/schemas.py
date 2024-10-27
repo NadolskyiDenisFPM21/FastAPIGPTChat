@@ -46,7 +46,7 @@ class ThreadCreate(ThreadBase):
     user_id: UUID
 
 
-class TreadResponse(ThreadBase):
+class ThreadResponse(ThreadBase):
     id: str
     model_config = ConfigDict(from_attributes=True)
 
